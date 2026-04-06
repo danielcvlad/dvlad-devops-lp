@@ -6,6 +6,9 @@ pages:
     - npm ci
     - npm run build
     - mv dist public
+    - echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    - echo "🔗 GitLab Pages URL: https://$CI_PROJECT_ROOT_NAMESPACE.gitlab.io/$CI_PROJECT_NAME/"
+    - echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
   artifacts:
     paths:
       - public
