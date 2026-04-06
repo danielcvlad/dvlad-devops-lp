@@ -121,3 +121,65 @@ body {
 .pipeline-node.bg-primary { background-color: var(--color-primary); }
 .pipeline-node.bg-secondary { background-color: var(--color-secondary); }
 .pipeline-node.bg-outline-variant { background-color: var(--color-outline-variant); }
+
+/* Mobile Responsive Fixes */
+@media (max-width: 640px) {
+  .btn-primary, .btn-secondary {
+    padding: 10px 16px;
+    font-size: 11px;
+  }
+  
+  section {
+    padding: 48px 0;
+  }
+  
+  h1 {
+    font-size: 2.5rem !important;
+    line-height: 1.1 !important;
+  }
+  
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  .hero-stats {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .exp-item {
+    padding: 16px;
+  }
+  
+  .project-card {
+    padding: 20px;
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-tech {
+    gap: 8px;
+  }
+  
+  .tech-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .project-card {
+    padding: 24px;
+  }
+}
