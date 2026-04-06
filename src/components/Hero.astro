@@ -26,39 +26,36 @@ import { resumeData } from '../data/resume';
         Ship Your Code to <span class="text-primary">Production</span>
       </h1>
 
-      <p class="text-xl md:text-2xl max-w-3xl mb-6 font-light leading-relaxed" style="color: var(--color-secondary)">
+      <p class="text-xl md:text-2xl max-w-3xl mb-12 font-light leading-relaxed" style="color: var(--color-secondary)">
         {resumeData.title.split('|').map((part, i) => (
           <span>{i > 0 ? <span style="color: var(--color-on-surface-variant)"> | </span> : ''}{part.trim()}</span>
         ))}
       </p>
-      
-      <!-- Status Badge -->
-      <div class="inline-flex items-center gap-2 mb-12 px-4 py-2" style="background-color: rgba(52, 229, 7, 0.1); border: 1px solid rgba(52, 229, 7, 0.3); border-radius: 0">
-        <span class="w-2 h-2 rounded-full" style="background-color: var(--color-primary); animation: pulse 2s infinite;"></span>
-        <span class="text-sm font-mono uppercase tracking-wider" style="color: var(--color-primary)">Available for Projects</span>
+
+      <div class="grid md:grid-cols-3 gap-8 pt-8" style="border-top: 1px solid rgba(65, 71, 84, 0.1)">
+        <div>
+          <div class="text-xs font-mono uppercase tracking-widest mb-2" style="color: var(--color-primary)">STATUS</div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full" style="background-color: var(--color-primary); animation: pulse 2s infinite;"></span>
+            <span class="text-sm" style="color: var(--color-on-surface)">Available for projects</span>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-mono uppercase tracking-widest mb-2" style="color: var(--color-secondary)">CORE_STACK</div>
+          <div class="text-sm" style="color: var(--color-on-surface)">Azure, Kubernetes, Terraform, CI/CD</div>
+        </div>
+        <div>
+          <div class="text-xs font-mono uppercase tracking-widest mb-2" style="color: var(--color-on-surface-variant)">LOCATION</div>
+          <div class="text-sm" style="color: var(--color-on-surface)">Munich // Remote — Global Node</div>
+        </div>
       </div>
-      
+
       <style>
         @keyframes pulse {
           0%, 100% { opacity: 1; }
           50% { opacity: 0.4; }
         }
       </style>
-
-      <div class="grid md:grid-cols-3 gap-8 pt-8" style="border-top: 1px solid rgba(65, 71, 84, 0.1)">
-        <div>
-          <div class="text-xs font-mono uppercase tracking-widest mb-2" style="color: var(--color-primary)">STATUS_ACTIVE</div>
-          <div class="text-lg" style="color: var(--color-on-surface)">Senior Infrastructure Engineer @ Roland Berger</div>
-        </div>
-        <div>
-          <div class="text-xs font-mono uppercase tracking-widest mb-2" style="color: var(--color-secondary)">CORE_STACK</div>
-          <div class="text-lg" style="color: var(--color-on-surface)">Azure, K8s, Terraform</div>
-        </div>
-        <div>
-          <div class="text-xs font-mono uppercase tracking-widest mb-2" style="color: var(--color-on-surface-variant)">LOCATION</div>
-          <div class="text-lg" style="color: var(--color-on-surface)">{resumeData.locationDisplay}</div>
-        </div>
-      </div>
 
       <!-- Visual Bleed Background (Terraform code) -->
       <div class="absolute -right-20 -bottom-20 opacity-5 pointer-events-none hidden lg:block">
