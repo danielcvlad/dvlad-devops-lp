@@ -34,7 +34,7 @@ export const resumeData = {
       company: "Microsoft",
       location: "Bucharest, Romania",
       period: "Jan 2022 – May 2024",
-      periodShort: "2018 — 2021",
+      periodShort: "2022 — 2024",
       color: "secondary",
       bullets: [
         "Providing expert guidance to S500 customers across Storage, Connectivity, Management, and Configuration domains",
@@ -49,7 +49,7 @@ export const resumeData = {
       company: "Orange Romania",
       location: "Bucharest, Romania",
       period: "Jan 2020 – Dec 2021",
-      periodShort: "PREVIOUS NODES",
+      periodShort: "2017 — 2021",
       color: "muted",
       bullets: [
         "Managed daily operational workflows and process optimization for telecom serving millions of customers",

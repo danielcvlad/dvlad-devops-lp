@@ -6,7 +6,7 @@ import { resumeData } from '../data/resume';
   <div class="max-w-6xl mx-auto px-6 flex flex-col items-center">
     <div class="flex items-center gap-4 mb-16 w-full">
       <div class="h-[1px] flex-grow" style="background: linear-gradient(to right, transparent, rgba(65, 71, 84, 0.3))"></div>
-      <h2 class="text-3xl font-bold headline-font tracking-tighter uppercase whitespace-nowrap">The Infrastructure Pipeline</h2>
+      <h2 class="text-3xl font-bold headline-font tracking-tighter uppercase whitespace-nowrap">Work Experience</h2>
       <div class="h-[1px] flex-grow" style="background: linear-gradient(to right, rgba(65, 71, 84, 0.3), transparent)"></div>
     </div>
 
@@ -25,21 +25,27 @@ import { resumeData } from '../data/resume';
           ></div>
 
           <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
-            <h3 class={`text-xl font-bold headline-font ${
-              exp.color === 'primary' ? 'text-primary' :
-              exp.color === 'secondary' ? 'text-secondary' :
-              'text-on-surface-variant'
-            }`}>
-              {exp.title}
-            </h3>
+            <div>
+              <h3 class="text-xl font-bold headline-font" style="color: var(--color-secondary)">
+                {exp.title}
+              </h3>
+              <span class="text-sm font-mono" style="color: var(--color-on-surface-variant)">
+                {exp.company}
+              </span>
+            </div>
             <span class="text-xs font-mono px-3 py-1" style="background-color: rgba(68, 143, 255, 0.1); color: var(--color-secondary)">
-              {exp.periodShort} // {exp.company.toUpperCase()}
+              {exp.periodShort}
             </span>
           </div>
-
-          <p class="mb-4 leading-relaxed" style="color: var(--color-on-surface-variant)">
-            {exp.bullets[0]}
-          </p>
+          
+          <ul class="mb-4 space-y-2 leading-relaxed" style="color: var(--color-on-surface-variant)">
+            {exp.bullets.map(bullet => (
+              <li class="flex items-start gap-2">
+                <span style="color: var(--color-secondary)">▸</span>
+                <span>{bullet}</span>
+              </li>
+            ))}
+          </ul>
 
           <div class="flex gap-2 flex-wrap">
             {exp.tags.map(tag => (

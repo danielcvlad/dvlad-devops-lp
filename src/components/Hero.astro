@@ -5,34 +5,30 @@ import { resumeData } from '../data/resume';
 <section class="max-w-6xl mx-auto px-6 py-12 md:py-24" id="about">
   <!-- Terminal Window -->
   <div class="border relative overflow-hidden" style="background-color: var(--color-surface-container-lowest); border-color: rgba(65, 71, 84, 0.2)">
-    <!-- Terminal Header -->
-    <div class="px-4 py-2 flex items-center gap-2" style="background-color: var(--color-surface-container-highest)">
-      <div class="flex gap-1.5">
-        <div class="w-3 h-3" style="border: 1px solid rgba(65, 71, 84, 0.3)"></div>
-        <div class="w-3 h-3" style="border: 1px solid rgba(65, 71, 84, 0.3)"></div>
-        <div class="w-3 h-3" style="border: 1px solid rgba(65, 71, 84, 0.3)"></div>
-      </div>
-      <div class="text-[10px] font-mono ml-4" style="color: var(--color-secondary); opacity: 0.7">bash — architect@dvlad-system</div>
+    <!-- Terminal Header - subtle -->
+    <div class="px-4 py-2 flex items-center gap-2" style="background-color: var(--color-surface-container-low)">
+      <span class="text-[10px] font-mono" style="color: var(--color-on-surface-variant); opacity: 0.5">bash — architect@dvlad-system</span>
     </div>
 
-    <!-- Terminal Content -->
+    <!-- Terminal Content - below header -->
     <div class="p-8 md:p-12 relative">
       <div class="mb-6">
         <span class="font-mono mr-2" style="color: var(--color-primary)">&gt;</span>
         <span class="text-sm font-mono" style="color: var(--color-on-surface-variant)">init --profile "{resumeData.name}"</span>
       </div>
 
-      <h1 class="text-4xl md:text-7xl font-bold headline-font leading-tight tracking-tighter mb-8">
-        Ship Your Code to <span class="text-primary">Production</span>
+      <h1 class="text-4xl md:text-6xl font-bold headline-font leading-tight tracking-tighter mb-4">
+        Ship Your Code to Production.
       </h1>
-
-      <p class="text-xl md:text-2xl max-w-3xl mb-12 font-light leading-relaxed" style="color: var(--color-secondary)">
-        {resumeData.title.split('|').map((part, i) => (
-          <span>{i > 0 ? <span style="color: var(--color-on-surface-variant)"> | </span> : ''}{part.trim()}</span>
-        ))}
+      <p class="text-2xl md:text-3xl font-light mb-8" style="color: var(--color-primary)">
+        Faster & More Secure.
       </p>
 
-      <div class="grid md:grid-cols-3 gap-8 pt-8" style="border-top: 1px solid rgba(65, 71, 84, 0.1)">
+      <p class="text-xl md:text-2xl max-w-3xl mb-8 font-light leading-relaxed" style="color: var(--color-secondary)">
+        DevOps Engineer | Cloud Solutions Architect
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-8 pt-6" style="border-top: 1px solid rgba(65, 71, 84, 0.1)">
         <div>
           <div class="text-xs font-mono uppercase tracking-widest mb-2" style="color: var(--color-primary)">STATUS</div>
           <div class="flex items-center gap-2">
