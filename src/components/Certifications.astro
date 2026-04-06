@@ -17,13 +17,13 @@ const certBadges: Record<string, { bg: string; label: string }> = {
   }
 };
 
-// Microsoft Learn credential verification URLs
+// Microsoft Learn credential verification URLs (from CV PDF)
 const verifyUrls: Record<string, string> = {
-  "AZ-400": "https://learn.microsoft.com/api/credentials/verify/?authority=emeaDefaults&code=AZ-400&verify=True",
-  "AZ-305": "https://learn.microsoft.com/api/credentials/verify/?authority=emeaDefaults&code=AZ-305&verify=True",
-  "AZ-500": "https://learn.microsoft.com/api/credentials/verify/?authority=emeaDefaults&code=AZ-500&verify=True",
-  "AZ-104": "https://learn.microsoft.com/api/credentials/verify/?authority=emeaDefaults&code=AZ-104&verify=True",
-  "AZ-140": "https://learn.microsoft.com/api/credentials/verify/?authority=emeaDefaults&code=AZ-140&verify=True",
+  "AZ-400": "https://learn.microsoft.com/api/credentials/share/en-us/DanielVlad-3730/1121D1CBC6B643BC?sharingId=1831A122A9A3BA9",
+  "AZ-305": "https://learn.microsoft.com/api/credentials/share/en-us/DanielVlad-3730/36C8EF8009EDFAB9?sharingId=1831A122A9A3BA9",
+  "AZ-500": "https://learn.microsoft.com/api/credentials/share/en-us/DanielVlad-3730/6F2E319C960F8316?sharingId=1831A122A9A3BA9",
+  "AZ-104": "https://learn.microsoft.com/api/credentials/share/en-us/DanielVlad-3730/4DAD0DB97E5412CB?sharingId=1831A122A9A3BA9",
+  "AZ-140": "https://learn.microsoft.com/api/credentials/share/en-us/DanielVlad-3730/6EB334077409C7D?sharingId=1831A122A9A3BA9",
 };
 ---
 
@@ -63,7 +63,7 @@ const verifyUrls: Record<string, string> = {
           </div>
           <div class="px-5 py-4 flex-grow flex items-center justify-between gap-4">
             <div class="text-left">
-              <div class={`text-sm font-bold headline-font mb-0.5 tracking-tight ${cert.color === 'primary' ? 'text-primary' : 'text-secondary'}`}>
+              <div class="text-sm headline-font mb-0.5 tracking-tight" style="color: var(--color-on-surface)">
                 {cert.name}
               </div>
               <div class="text-[10px] font-mono" style="color: var(--color-outline-variant)">
