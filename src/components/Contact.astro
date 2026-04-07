@@ -9,7 +9,7 @@ import { resumeData } from '../data/resume';
       <p class="max-w-md" style="color: var(--color-on-surface-variant)">Book a free call to audit your environment and discover how we can elevate your infrastructure.</p>
     </div>
 
-    <div class="border p-8 relative w-full" style="background-color: var(--color-surface-container-lowest); border-color: rgba(65, 71, 84, 0.4); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5)">
+    <div class="border p-8 relative w-full" style="background-color: var(--color-surface-container-lowest); border-color: var(--color-outline-variant); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15)">
       <div class="absolute top-0 right-0 p-4 font-mono text-[10px] uppercase" style="color: var(--color-outline-variant)">input.yaml</div>
 
       <form class="space-y-8" action="https://formsubmit.co/ajax/{resumeData.email}" method="POST" data-netlify="true">
@@ -22,7 +22,7 @@ import { resumeData } from '../data/resume';
             <label class="block text-[10px] font-mono uppercase mb-2" style="color: var(--color-primary)">request_id (name)</label>
             <input
               class="w-full px-3 py-3 transition-colors"
-              style="background-color: rgba(42, 42, 42, 0.3); border: none; border-bottom: 2px solid rgba(65, 71, 84, 0.6); color: var(--color-on-surface)"
+              style="background-color: var(--color-surface-container-high); border: none; border-bottom: 2px solid var(--color-outline-variant); color: var(--color-on-surface)"
               placeholder="Your Name"
               type="text"
               name="name"
@@ -33,7 +33,7 @@ import { resumeData } from '../data/resume';
             <label class="block text-[10px] font-mono uppercase mb-2" style="color: var(--color-primary)">callback_address (email)</label>
             <input
               class="w-full px-3 py-3 transition-colors"
-              style="background-color: rgba(42, 42, 42, 0.3); border: none; border-bottom: 2px solid rgba(65, 71, 84, 0.6); color: var(--color-on-surface)"
+              style="background-color: var(--color-surface-container-high); border: none; border-bottom: 2px solid var(--color-outline-variant); color: var(--color-on-surface)"
               placeholder="email@address.com"
               type="email"
               name="email"
@@ -46,7 +46,7 @@ import { resumeData } from '../data/resume';
           <label class="block text-[10px] font-mono uppercase mb-2" style="color: var(--color-primary)">deployment_specs (message)</label>
           <textarea
             class="w-full px-3 py-3 resize-none transition-colors"
-            style="background-color: rgba(42, 42, 42, 0.3); border: none; border-bottom: 2px solid rgba(65, 71, 84, 0.6); color: var(--color-on-surface)"
+            style="background-color: var(--color-surface-container-high); border: none; border-bottom: 2px solid var(--color-outline-variant); color: var(--color-on-surface)"
             placeholder="Describe your infrastructure needs..."
             rows="4"
             name="message"
