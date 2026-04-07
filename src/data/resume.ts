@@ -13,7 +13,7 @@ export const resumeData = {
 
   experience: [
     {
-      title: "Senior Infrastructure Engineer, Azure DevOps",
+      title: "DevOps Engineer",
       company: "Roland Berger",
       location: "Munich, Germany",
       period: "May 2024 – Present",
@@ -30,7 +30,7 @@ export const resumeData = {
       tags: ["Azure Cloud", "Terraform", "Governance", "IaC", "CI/CD"]
     },
     {
-      title: "Support Escalation Engineer, Azure IaaS VMs",
+      title: "Support Escalation Engineer",
       company: "Microsoft",
       location: "Bucharest, Romania",
       period: "Jan 2022 – May 2024",
