@@ -244,3 +244,22 @@ html.light #theme-toggle-float {
     padding: 24px;
   }
 }
+
+/* Navigation hover — green on hover, active becomes normal */
+nav .nav-link:hover {
+  color: var(--color-primary) !important;
+  opacity: 1 !important;
+  border-bottom: 1px solid var(--color-primary);
+  padding-bottom: 2px;
+}
+
+/* Active nav item (ABOUT) loses green when hovering other nav items */
+nav:hover .nav-link[style*="border-bottom"] {
+  color: var(--color-secondary) !important;
+  border-bottom-color: transparent !important;
+  opacity: 0.7 !important;
+}
+
+nav .nav-link {
+  transition: color 0.2s ease, opacity 0.2s ease, border-bottom 0.2s ease;
+}
