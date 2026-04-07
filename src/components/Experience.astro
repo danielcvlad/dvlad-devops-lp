@@ -1,5 +1,9 @@
 ---
 import { resumeData } from '../data/resume';
+
+const visibleCount = 2; // Show last 2 by default, earlier jobs collapsed
+const earlierJobs = resumeData.experience.slice(visibleCount);
+const recentJobs = resumeData.experience.slice(0, visibleCount);
 ---
 
 <section class="py-24" style="background-color: var(--color-surface-container-low)" id="experience">
@@ -14,7 +18,7 @@ import { resumeData } from '../data/resume';
       <!-- Pipeline Connector Line -->
       <div class="absolute left-[7px] top-0 bottom-0 w-[2px]" style="background-color: rgba(65, 71, 84, 0.2)"></div>
 
-      {resumeData.experience.map((exp, index) => (
+      {recentJobs.map((exp, index) => (
         <div class="relative pl-12 pb-16 last:pb-0">
           <div
             class={`pipeline-node ${
@@ -54,6 +58,74 @@ import { resumeData } from '../data/resume';
           </div>
         </div>
       ))}
+
+      {/* Collapsible earlier experience */}
+      <div id="earlier-experience" class="hidden">
+        {earlierJobs.map((exp, index) => (
+          <div class="relative pl-12 pb-16 last:pb-0">
+            <div
+              class={`pipeline-node ${
+                exp.color === 'primary' ? 'bg-primary' :
+                exp.color === 'secondary' ? 'bg-secondary' :
+                'bg-outline-variant'
+              }`}
+            ></div>
+
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+              <div>
+                <h3 class="text-xl font-bold headline-font" style="color: var(--color-secondary)">
+                  {exp.title}
+                </h3>
+                <span class="text-sm font-mono" style="color: var(--color-on-surface-variant)">
+                  {exp.company}
+                </span>
+              </div>
+              <span class="text-xs font-mono px-3 py-1" style="background-color: rgba(68, 143, 255, 0.1); color: var(--color-secondary)">
+                {exp.periodShort}
+              </span>
+            </div>
+            
+            <ul class="mb-4 space-y-2 leading-relaxed" style="color: var(--color-on-surface-variant)">
+              {exp.bullets.map(bullet => (
+                <li class="flex items-start gap-2">
+                  <span style="color: var(--color-secondary)">▸</span>
+                  <span>{bullet}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="flex gap-2 flex-wrap">
+              {exp.tags.map(tag => (
+                <span class="skill-tag">{tag}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Toggle button */}
+      {earlierJobs.length > 0 && (
+        <div class="pl-12">
+          <button
+            id="toggle-earlier"
+            class="text-sm font-mono transition-opacity hover:opacity-70 mt-2"
+            style="color: var(--color-on-surface-variant)"
+            onclick="
+              const el = document.getElementById('earlier-experience');
+              const btn = document.getElementById('toggle-earlier');
+              if (el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+                btn.textContent = '[–] SHOW LESS';
+              } else {
+                el.classList.add('hidden');
+                btn.textContent = '[+] SHOW EARLIER EXPERIENCE';
+              }
+            "
+          >
+            [+] SHOW EARLIER EXPERIENCE
+          </button>
+        </div>
+      )}
     </div>
   </div>
 </section>
