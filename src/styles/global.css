@@ -162,6 +162,21 @@ html.light .icon-github { color: #24292f; }
 
 .icon-github:hover { opacity: 0.8; }
 
+/* Floating theme toggle — mobile only */
+#theme-toggle-float {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+#theme-toggle-float:hover {
+  transform: scale(1.05);
+}
+html.dark #theme-toggle-float {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 8px rgba(52, 229, 7, 0.2);
+}
+html.light #theme-toggle-float {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 6px rgba(0, 120, 212, 0.15);
+}
+
 /* Mobile Responsive Fixes */
 @media (max-width: 640px) {
   .btn-primary, .btn-secondary {
