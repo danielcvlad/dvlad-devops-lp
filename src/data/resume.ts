@@ -34,7 +34,7 @@ export const resumeData = {
       company: "Microsoft",
       location: "Bucharest, Romania",
       period: "Jan 2022 – May 2024",
-      periodShort: "2022 — 2024",
+      periodShort: "2021 — 2024",
       color: "secondary",
       bullets: [
         "Providing expert guidance to S500 customers across Storage, Connectivity, Management, and Configuration domains",
@@ -46,18 +46,21 @@ export const resumeData = {
     },
     {
       title: "Operational Specialist",
-      company: "Orange Romania",
+      company: "Orange",
       location: "Bucharest, Romania",
       period: "Jan 2020 – Dec 2021",
-      periodShort: "2017 — 2021",
+      periodShort: "2020 — 2021",
       color: "muted",
       bullets: [
-        "Managed daily operational workflows and process optimization for telecom serving millions of customers",
-        "Coordinated cross-functional teams for seamless service delivery and minimal downtime",
-        "Monitored KPIs and system performance, improving operational efficiency by 25%",
-        "Developed SOPs for incident management and escalation processes"
+        "Led end-to-end RPA deployments, supporting 20+ production bots and multiple development environments, ensuring high availability and scalability.",
+        "Built and maintained VM infrastructure (Windows Server & Linux) for RPA workloads, reducing environment provisioning time by 30% through automation using Infrastructure as Code.",
+        "Configured and Deployed UiPath Orchestrator, streamlining automation scheduling, monitoring, and governance for enterprise-scale operations.",
+        "Implemented CI/CD pipelines for RPA projects, enabling faster and more reliable deployments with 40% fewer release incidents.",
+        "Automated Elasticsearch and Kibana for proactive monitoring and alerts, log analysis, and root-cause investigations, cutting incident resolution time by 25%.",
+        "Performed code reviews and enforced best practices, increasing reusability and maintainability across automation projects.",
+        "Automated infrastructure and deployment tasks with PowerShell and Azure DevOps, reducing manual effort and improving consistency across environments."
       ],
-      tags: ["Linux", "Virtualization", "Automation"]
+      tags: ["RPA", "UiPath", "IaC", "CI/CD", "Azure DevOps"]
     }
   ],
 

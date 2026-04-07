@@ -160,7 +160,13 @@ html.light .icon-linkedin { color: #0A66C2; }
 html.dark .icon-github { color: var(--color-on-surface-variant); }
 html.light .icon-github { color: #24292f; }
 
-.icon-github:hover { opacity: 0.8; }
+.icon-github:hover,
+.icon-gitlab:hover,
+.icon-linkedin:hover {
+  opacity: 0.7;
+  transform: scale(1.15);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
 
 /* Floating theme toggle — mobile only */
 #theme-toggle-float {
