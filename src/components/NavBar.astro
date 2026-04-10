@@ -17,11 +17,68 @@ const resumeUrl = "/dvlad-devops-lp/CV_Daniel_Vlad.pdf";
   <svg id="theme-toggle-float-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
 </button>
 
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-40 hidden" style="background-color: rgba(0,0,0,0.5)">
+  <div id="mobile-menu-drawer" class="absolute left-0 top-0 bottom-0 w-72 max-w-[80vw] transform -translate-x-full transition-transform duration-300" style="background-color: var(--color-background)">
+    <div class="p-4 border-b" style="border-color: rgba(65, 71, 84, 0.3)">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="text-lg font-black" style="color: var(--color-primary)">{'>'}</span>
+          <span class="font-bold headline-font">Menu</span>
+        </div>
+        <button onclick="toggleMobileMenu()" class="p-2" aria-label="Close menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <nav class="p-4 space-y-2">
+      <a onclick="toggleMobileMenu()" href="#about" class="block py-3 px-4 headline-font text-sm tracking-widest uppercase rounded" style="color: var(--color-secondary)">About</a>
+      <a onclick="toggleMobileMenu()" href="#experience" class="block py-3 px-4 headline-font text-sm tracking-widest uppercase rounded" style="color: var(--color-secondary)">Experience</a>
+      <a onclick="toggleMobileMenu()" href="#projects" class="block py-3 px-4 headline-font text-sm tracking-widest uppercase rounded" style="color: var(--color-secondary)">Projects</a>
+      <a onclick="toggleMobileMenu()" href="#contact" class="block py-3 px-4 headline-font text-sm tracking-widest uppercase rounded" style="color: var(--color-secondary)">Contact</a>
+    </nav>
+    <div class="p-4 border-t space-y-3" style="border-color: rgba(65, 71, 84, 0.3)">
+      <a href={resumeUrl} download class="flex items-center justify-center gap-2 w-full py-3 px-4 font-mono text-xs uppercase tracking-widest rounded border transition-colors hover:opacity-80" style="border-color: var(--color-outline-variant); color: var(--color-secondary)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Resume
+      </a>
+      <a href="#contact" onclick="toggleMobileMenu()" class="flex items-center justify-center w-full py-3 px-4 font-mono text-xs uppercase tracking-widest rounded transition-colors hover:opacity-80" style="background-color: var(--color-primary); color: var(--color-background)">
+        HIRE_ME
+      </a>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const drawer = document.getElementById('mobile-menu-drawer');
+    menu.classList.toggle('hidden');
+    drawer.classList.toggle('-translate-x-full');
+  }
+  
+  // Close menu when clicking overlay
+  document.getElementById('mobile-menu').addEventListener('click', function(e) {
+    if (e.target === this) {
+      toggleMobileMenu();
+    }
+  });
+</script>
+
 <header class="fixed top-0 left-0 right-0 z-50 border-b-0" style="background-color: var(--color-background)">
   <div class="flex justify-between items-center w-full px-4 md:px-6 py-3 max-w-[1920px] mx-auto relative">
     <!-- Mobile: hamburger + logo, Desktop: logo + nav + buttons -->
     <div class="flex items-center gap-4 w-full justify-between">
-      <!-- Logo placeholder -->
+      <!-- Hamburger — mobile only -->
+      <button onclick="toggleMobileMenu()" class="flex md:hidden items-center justify-center w-10 h-10" aria-label="Open menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+      </button>
+
+      <!-- Logo -->
       <div class="w-8 h-8 flex items-center justify-center">
         <span class="text-lg font-black" style="color: var(--color-primary)">{'>'}</span>
       </div>
@@ -33,6 +90,9 @@ const resumeUrl = "/dvlad-devops-lp/CV_Daniel_Vlad.pdf";
         <a class="headline-font text-sm tracking-widest uppercase nav-link" style="color: var(--color-secondary); opacity: 0.7" href="#projects">Projects</a>
         <a class="headline-font text-sm tracking-widest uppercase nav-link" style="color: var(--color-secondary); opacity: 0.7" href="#contact">Contact</a>
       </nav>
+
+      <!-- Spacer for mobile logo centering -->
+      <div class="w-10 md:hidden"></div>
 
       <!-- Buttons -->
       <div class="flex items-center gap-2 md:gap-4">
