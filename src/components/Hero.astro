@@ -22,32 +22,81 @@ import { resumeData } from '../data/resume';
         <span class="text-xs sm:text-sm font-mono" style="color: var(--color-on-surface-variant)">init --profile "{resumeData.name}"</span>
       </div>
 
-      <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold headline-font leading-tight tracking-tighter mb-3 sm:mb-4">
-        Ship Your Code to Production.
-      </h1>
-      <p class="text-xl sm:text-2xl md:text-3xl font-light mb-6 sm:mb-8" style="color: var(--color-primary)">
-        Faster & More Secure.
-      </p>
+      <h1
+        class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold headline-font leading-tight tracking-tighter mb-3 sm:mb-4"
+        data-i18n-base
+        data-i18n-en="Ship Your Code to Production."
+        data-i18n-de="Code in Produktion bringen."
+      >Ship Your Code to Production.</h1>
 
-      <p class="text-base sm:text-lg md:text-2xl max-w-3xl mb-6 sm:mb-8 font-light leading-relaxed" style="color: var(--color-secondary)">
-        I help engineering teams deploy to production <span class="font-bold" style="color: var(--color-primary)">10x faster</span> — without sacrificing security or stability.
-      </p>
+      <p
+        class="text-xl sm:text-2xl md:text-3xl font-light mb-6 sm:mb-8"
+        style="color: var(--color-primary)"
+        data-i18n-base
+        data-i18n-en="Faster &amp; More Secure."
+        data-i18n-de="Schneller &amp; Sicherer."
+      >Faster &amp; More Secure.</p>
+
+      <p
+        class="text-base sm:text-lg md:text-2xl max-w-3xl mb-6 sm:mb-8 font-light leading-relaxed"
+        style="color: var(--color-secondary)"
+        data-i18n-base
+        data-i18n-en="I help engineering teams deploy to production {speed} — without sacrificing security or stability."
+        data-i18n-de="Ich helfe Engineering-Teams, {speed} in Produktion zu deployen — ohne Sicherheit oder Stabilität zu opfern."
+        data-i18n-params='{"speed":"10x faster"}'
+      >I help engineering teams deploy to production <span class="font-bold" style="color: var(--color-primary)">10x faster</span> — without sacrificing security or stability.</p>
 
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 pt-4 sm:pt-6" style="border-top: 1px solid rgba(65, 71, 84, 0.1)">
         <div>
-          <div class="text-[10px] sm:text-xs font-mono uppercase tracking-widest mb-1 sm:mb-2" style="color: var(--color-primary)">STATUS</div>
+          <div
+            class="text-[10px] sm:text-xs font-mono uppercase tracking-widest mb-1 sm:mb-2"
+            style="color: var(--color-primary)"
+            data-i18n-base
+            data-i18n-en="STATUS"
+            data-i18n-de="STATUS"
+          >STATUS</div>
           <div class="flex items-center gap-2">
             <span class="w-2 h-2 rounded-full" style="background-color: var(--color-primary); animation: pulse 2s infinite;"></span>
-            <span class="text-xs sm:text-sm" style="color: var(--color-on-surface)">Available for projects</span>
+            <span
+              class="text-xs sm:text-sm"
+              style="color: var(--color-on-surface)"
+              data-i18n-base
+              data-i18n-en="Available for projects"
+              data-i18n-de="Verfügbar für Projekte"
+            >Available for projects</span>
           </div>
         </div>
         <div>
-          <div class="text-[10px] sm:text-xs font-mono uppercase tracking-widest mb-1 sm:mb-2" style="color: var(--color-secondary)">CORE_STACK</div>
-          <div class="text-xs sm:text-sm" style="color: var(--color-on-surface)">Azure, Kubernetes, Terraform, CI/CD</div>
+          <div
+            class="text-[10px] sm:text-xs font-mono uppercase tracking-widest mb-1 sm:mb-2"
+            style="color: var(--color-secondary)"
+            data-i18n-base
+            data-i18n-en="CORE_STACK"
+            data-i18n-de="CORE_STACK"
+          >CORE_STACK</div>
+          <div
+            class="text-xs sm:text-sm"
+            style="color: var(--color-on-surface)"
+            data-i18n-base
+            data-i18n-en="Azure, Kubernetes, Terraform, CI/CD"
+            data-i18n-de="Azure, Kubernetes, Terraform, CI/CD"
+          >Azure, Kubernetes, Terraform, CI/CD</div>
         </div>
         <div>
-          <div class="text-[10px] sm:text-xs font-mono uppercase tracking-widest mb-1 sm:mb-2" style="color: var(--color-on-surface-variant)">LOCATION</div>
-          <div class="text-xs sm:text-sm" style="color: var(--color-on-surface)">Munich // Remote — Global Node</div>
+          <div
+            class="text-[10px] sm:text-xs font-mono uppercase tracking-widest mb-1 sm:mb-2"
+            style="color: var(--color-on-surface-variant)"
+            data-i18n-base
+            data-i18n-en="LOCATION"
+            data-i18n-de="STANDORT"
+          >LOCATION</div>
+          <div
+            class="text-xs sm:text-sm"
+            style="color: var(--color-on-surface)"
+            data-i18n-base
+            data-i18n-en="Munich // Remote — Global Node"
+            data-i18n-de="München // Remote — Global Node"
+          >Munich // Remote — Global Node</div>
         </div>
       </div>
 

@@ -11,7 +11,13 @@ import Footer from '../components/Footer.astro';
     <div class="max-w-2xl mx-auto px-6 text-center">
 
       <div class="border p-12 relative" style="background-color: var(--color-surface-container-lowest); border-color: var(--color-outline-variant); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15)">
-        <div class="absolute top-0 right-0 p-4 font-mono text-[10px] uppercase" style="color: var(--color-outline-variant)">status: 200_ok</div>
+        <div
+          class="absolute top-0 right-0 p-4 font-mono text-[10px] uppercase"
+          style="color: var(--color-outline-variant)"
+          data-i18n-base
+          data-i18n-en="status: 200_ok"
+          data-i18n-de="status: 200_ok"
+        >status: 200_ok</div>
 
         <!-- Icon -->
         <div class="mb-8 flex justify-center">
@@ -21,27 +27,49 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <!-- Headline -->
-        <h1 class="text-3xl font-bold headline-font tracking-tighter uppercase mb-4" style="color: var(--color-on-surface)">
-          Message received.
-        </h1>
+        <h1
+          class="text-3xl font-bold headline-font tracking-tighter uppercase mb-4"
+          style="color: var(--color-on-surface)"
+          data-i18n-base
+          data-i18n-en="Message received."
+          data-i18n-de="Nachricht erhalten."
+        >Message received.</h1>
 
         <!-- Subtext -->
-        <p class="mb-2" style="color: var(--color-on-surface-variant)">
-          Got it — I'll be in touch shortly.
-        </p>
-        <p class="text-sm mb-10" style="color: var(--color-outline-variant)">
-          Typical response time: within 24 hours.
-        </p>
+        <p
+          class="mb-2"
+          style="color: var(--color-on-surface-variant)"
+          data-i18n-base
+          data-i18n-en="Got it — I'll be in touch shortly."
+          data-i18n-de="Alles klar — ich melde mich in Kürze."
+        >Got it — I'll be in touch shortly.</p>
+        <p
+          class="text-sm mb-10"
+          style="color: var(--color-outline-variant)"
+          data-i18n-base
+          data-i18n-en="Typical response time: within 24 hours."
+          data-i18n-de="Typische Antwortzeit: unter 24 Stunden."
+        >Typical response time: within 24 hours.</p>
 
         <!-- Terminal flavour -->
-        <div class="font-mono text-[11px] mb-10 text-left border p-4" style="border-color: var(--color-outline-variant); background-color: var(--color-surface-container-high); color: var(--color-primary)">
-          <div><span style="color: var(--color-outline-variant)">$</span> form.submit() <span style="color: var(--color-on-surface-variant)">→ 200 OK</span></div>
-          <div><span style="color: var(--color-outline-variant)">$</span> email.queue() <span style="color: var(--color-on-surface-variant)">→ delivered</span></div>
-          <div><span style="color: var(--color-outline-variant)">$</span> response.eta <span style="color: var(--color-on-surface-variant)">→ &lt; 24h</span></div>
+        <div
+          class="font-mono text-[11px] mb-10 text-left border p-4"
+          style="border-color: var(--color-outline-variant); background-color: var(--color-surface-container-high); color: var(--color-primary)"
+          data-i18n-base
+          data-i18n-en="form.submit() → 200 OK"
+          data-i18n-de="form.submit() → 200 OK"
+        >
+          <div><span style="color: var(--color-outline-variant)">$</span> <span data-i18n-base data-i18n-en="form.submit()" data-i18n-de="form.submit()">form.submit()</span> <span style="color: var(--color-on-surface-variant)">→ 200 OK</span></div>
+          <div><span style="color: var(--color-outline-variant)">$</span> <span data-i18n-base data-i18n-en="email.queue()" data-i18n-de="email.queue()">email.queue()</span> <span style="color: var(--color-on-surface-variant)">→ delivered</span></div>
+          <div><span style="color: var(--color-outline-variant)">$</span> <span data-i18n-base data-i18n-en="response.eta" data-i18n-de="response.eta">response.eta</span> <span style="color: var(--color-on-surface-variant)">→ &lt; 24h</span></div>
         </div>
 
         <!-- Back link -->
-        <a href="/dvlad-devops-lp/" class="btn-primary inline-flex items-center gap-2">
+        <a href="/dvlad-devops-lp/" class="btn-primary inline-flex items-center gap-2"
+          data-i18n-base
+          data-i18n-en="BACK TO SITE"
+          data-i18n-de="ZURÜCK ZUR SEITE"
+        >
           <span class="material-symbols-outlined text-sm" style="font-size: 16px;">arrow_back</span>
           BACK TO SITE
         </a>

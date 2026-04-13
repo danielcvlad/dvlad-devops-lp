@@ -5,13 +5,26 @@ import { resumeData } from '../data/resume';
 <section class="py-24 max-w-6xl mx-auto px-6">
   <div class="grid lg:grid-cols-2 gap-12 items-center">
     <div class="text-center lg:text-left flex flex-col items-center lg:items-start">
-      <h2 class="text-3xl font-bold headline-font tracking-tighter uppercase mb-6">Technical Stack</h2>
-      <p class="mb-6 max-w-md" style="color: var(--color-on-surface-variant)">
-        Built on enterprise-grade tools.
-      </p>
-      <p class="mb-8 max-w-md" style="color: var(--color-on-surface-variant)">
-        Supporting customers to overcome deployment issues and significantly remove technical debt.
-      </p>
+      <h2
+        class="text-3xl font-bold headline-font tracking-tighter uppercase mb-6"
+        data-i18n-base
+        data-i18n-en="Technical Stack"
+        data-i18n-de="Technischer Stack"
+      >Technical Stack</h2>
+      <p
+        class="mb-6 max-w-md"
+        style="color: var(--color-on-surface-variant)"
+        data-i18n-base
+        data-i18n-en="Built on enterprise-grade tools."
+        data-i18n-de="Auf Enterprise-Tools aufgebaut."
+      >Built on enterprise-grade tools.</p>
+      <p
+        class="mb-8 max-w-md"
+        style="color: var(--color-on-surface-variant)"
+        data-i18n-base
+        data-i18n-en="Supporting customers to overcome deployment issues and significantly remove technical debt."
+        data-i18n-de="Ich unterstütze Kunden dabei, Deployment-Probleme zu überwinden und technischen Schuldenberg deutlich zu reduzieren."
+      >Supporting customers to overcome deployment issues and significantly remove technical debt.</p>
 
       <div class="space-y-4 inline-block text-left w-full">
         <div class="flex items-center gap-4">
@@ -19,7 +32,9 @@ import { resumeData } from '../data/resume';
             <span class="material-symbols-outlined" style="color: var(--color-primary)">cloud</span>
           </div>
           <div class="self-center">
-            <div class="text-sm font-bold">Multi-Cloud Strategy</div>
+            <div class="text-sm font-bold"
+              data-i18n-base data-i18n-en="Multi-Cloud Strategy" data-i18n-de="Multi-Cloud-Strategie"
+            >Multi-Cloud Strategy</div>
             <div class="text-xs font-mono" style="color: var(--color-on-surface-variant)">Azure (Expert), AWS, GCP</div>
           </div>
         </div>
@@ -29,7 +44,9 @@ import { resumeData } from '../data/resume';
             <span class="material-symbols-outlined text-2xl" style="color: var(--color-secondary)">dns</span>
           </div>
           <div class="self-center">
-            <div class="text-sm font-bold">Orchestration & Tooling</div>
+            <div class="text-sm font-bold"
+              data-i18n-base data-i18n-en="Orchestration &amp; Tooling" data-i18n-de="Orchestrierung &amp; Tooling"
+            >Orchestration &amp; Tooling</div>
             <div class="text-xs font-mono" style="color: var(--color-on-surface-variant)">Kubernetes, Docker, Helm, AKS, EKS, ECR, ACR, Container Instances, Nexus</div>
           </div>
         </div>
@@ -39,7 +56,9 @@ import { resumeData } from '../data/resume';
             <span class="material-symbols-outlined" style="color: var(--color-primary)">code</span>
           </div>
           <div class="self-center">
-            <div class="text-sm font-bold">Infrastructure as Code</div>
+            <div class="text-sm font-bold"
+              data-i18n-base data-i18n-en="Infrastructure as Code" data-i18n-de="Infrastructure as Code"
+            >Infrastructure as Code</div>
             <div class="text-xs font-mono" style="color: var(--color-on-surface-variant)">Terraform, Bicep, Ansible</div>
           </div>
         </div>
@@ -49,7 +68,9 @@ import { resumeData } from '../data/resume';
             <span class="material-symbols-outlined" style="color: var(--color-secondary)">sync</span>
           </div>
           <div class="self-center">
-            <div class="text-sm font-bold">CI/CD & Automation</div>
+            <div class="text-sm font-bold"
+              data-i18n-base data-i18n-en="CI/CD &amp; Automation" data-i18n-de="CI/CD &amp; Automatisierung"
+            >CI/CD &amp; Automation</div>
             <div class="text-xs font-mono" style="color: var(--color-on-surface-variant)">Azure DevOps, Jenkins, GitHub Actions, GitLab CI, Python</div>
           </div>
         </div>
@@ -59,7 +80,9 @@ import { resumeData } from '../data/resume';
             <span class="material-symbols-outlined" style="color: var(--color-primary)">security</span>
           </div>
           <div class="self-center">
-            <div class="text-sm font-bold">Security & Identity</div>
+            <div class="text-sm font-bold"
+              data-i18n-base data-i18n-en="Security &amp; Identity" data-i18n-de="Sicherheit &amp; Identität"
+            >Security &amp; Identity</div>
             <div class="text-xs font-mono" style="color: var(--color-on-surface-variant)">Conditional Access, Entra ID, Sentinel, Defender, PIM</div>
           </div>
         </div>
@@ -99,7 +122,6 @@ import { resumeData } from '../data/resume';
         <div class="pl-4"><span class="text-secondary">-</span> helm</div>
         <div class="pl-4"><span class="text-secondary">-</span> ecr</div>
         <div class="pl-4"><span class="text-secondary">-</span> acr</div>
-
       </div>
     </div>
   </div>
