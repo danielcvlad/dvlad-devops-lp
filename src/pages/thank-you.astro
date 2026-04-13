@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import NavBar from '../components/NavBar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Message Sent — Daniel Vlad" description="Your message has been received.">
+  <NavBar />
+
+  <main class="pt-24 pb-12 min-h-screen flex items-center justify-center" style="background-color: var(--color-background)">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+
+      <div class="border p-12 relative" style="background-color: var(--color-surface-container-lowest); border-color: var(--color-outline-variant); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15)">
+        <div class="absolute top-0 right-0 p-4 font-mono text-[10px] uppercase" style="color: var(--color-outline-variant)">status: 200_ok</div>
+
+        <!-- Icon -->
+        <div class="mb-8 flex justify-center">
+          <div class="w-16 h-16 rounded-none flex items-center justify-center border-2" style="border-color: var(--color-primary); color: var(--color-primary)">
+            <span class="material-symbols-outlined" style="font-size: 32px;">check</span>
+          </div>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="text-3xl font-bold headline-font tracking-tighter uppercase mb-4" style="color: var(--color-on-surface)">
+          Message received.
+        </h1>
+
+        <!-- Subtext -->
+        <p class="mb-2" style="color: var(--color-on-surface-variant)">
+          Got it — I'll be in touch shortly.
+        </p>
+        <p class="text-sm mb-10" style="color: var(--color-outline-variant)">
+          Typical response time: within 24 hours.
+        </p>
+
+        <!-- Terminal flavour -->
+        <div class="font-mono text-[11px] mb-10 text-left border p-4" style="border-color: var(--color-outline-variant); background-color: var(--color-surface-container-high); color: var(--color-primary)">
+          <div><span style="color: var(--color-outline-variant)">$</span> form.submit() <span style="color: var(--color-on-surface-variant)">→ 200 OK</span></div>
+          <div><span style="color: var(--color-outline-variant)">$</span> email.queue() <span style="color: var(--color-on-surface-variant)">→ delivered</span></div>
+          <div><span style="color: var(--color-outline-variant)">$</span> response.eta <span style="color: var(--color-on-surface-variant)">→ &lt; 24h</span></div>
+        </div>
+
+        <!-- Back link -->
+        <a href="/dvlad-devops-lp/" class="btn-primary inline-flex items-center gap-2">
+          <span class="material-symbols-outlined text-sm" style="font-size: 16px;">arrow_back</span>
+          BACK TO SITE
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

@@ -18,8 +18,12 @@ import { resumeData } from '../data/resume';
       </div>
 
       <div class="font-mono text-[10px] uppercase tracking-widest" style="color: var(--color-outline-variant)">
-        © 2026 Daniel Vlad
+        © 2026–<span id="footer-year"></span> Daniel Vlad
       </div>
     </div>
   </div>
 </footer>
+
+<script is:inline>
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
