@@ -1,6 +1,7 @@
 ---
 import { resumeData } from '../data/resume';
 
+// Microsoft Learn certification badge URLs
 const certBadges: Record<string, { bg: string; label: string }> = {
   expert: {
     bg: "https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-expert-badge.svg",
@@ -16,6 +17,7 @@ const certBadges: Record<string, { bg: string; label: string }> = {
   }
 };
 
+// Microsoft Learn credential verification URLs (from CV PDF)
 const verifyUrls: Record<string, string> = {
   "AZ-400": "https://learn.microsoft.com/api/credentials/share/en-us/DanielVlad-3730/1121D1CBC6B643BC?sharingId=1831A122A9A3BA9",
   "AZ-305": "https://learn.microsoft.com/api/credentials/share/en-us/DanielVlad-3730/36C8EF8009EDFAB9?sharingId=1831A122A9A3BA9",
@@ -26,6 +28,7 @@ const verifyUrls: Record<string, string> = {
 ---
 
 <section class="py-24 max-w-6xl mx-auto px-6 text-center">
+  <!-- JSON-LD Structured Data for Certifications -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Person",
@@ -36,28 +39,22 @@ const verifyUrls: Record<string, string> = {
       "credentialCategory": "certification",
       "name": cert.name,
       "identifier": cert.id,
-      "issuer": { "@type": "Organization", "name": cert.issuer },
+      "issuer": {
+        "@type": "Organization",
+        "name": cert.issuer
+      },
       "educationalLevel": cert.level
     }))
   })} />
 
-  <h2
-    class="text-3xl font-bold headline-font tracking-tighter uppercase mb-16"
-    data-i18n-base
-    data-i18n-en="Credentials"
-    data-i18n-de="Zertifizierungen"
-  >Credentials</h2>
+  <h2 class="text-3xl font-bold headline-font tracking-tighter uppercase mb-16">Credentials</h2>
 
   <div class="max-w-3xl mx-auto border overflow-hidden" style="background-color: var(--color-surface-container-lowest); border-color: rgba(65, 71, 84, 0.2)">
     <!-- Terminal Header -->
     <div class="px-4 py-2 flex items-center justify-between" style="background-color: var(--color-surface-container-highest); border-bottom: 1px solid rgba(65, 71, 84, 0.2)">
-      <span
-        class="text-[10px] font-mono uppercase tracking-widest"
-        style="color: var(--color-secondary); opacity: 0.7"
-        data-i18n-base
-        data-i18n-en="Verified Credentials // Auth_Success"
-        data-i18n-de="Verifizierte Zertifizierungen // Auth_Erfolg"
-      >Verified Credentials // Auth_Success</span>
+      <span class="text-[10px] font-mono uppercase tracking-widest" style="color: var(--color-secondary); opacity: 0.7">
+        Verified Credentials // Auth_Success
+      </span>
       <div class="flex gap-1.5">
         <div class="w-2 h-2 rounded-full" style="background-color: var(--color-primary); opacity: 0.5"></div>
       </div>
@@ -85,16 +82,16 @@ const verifyUrls: Record<string, string> = {
           </div>
           <div class="px-5 py-4 flex-grow flex items-center justify-between gap-4">
             <div class="text-left">
-              <div class="text-sm headline-font mb-0.5 tracking-tight" style="color: var(--color-on-surface)">{cert.name}</div>
-              <div class="text-[10px] font-mono" style="color: var(--color-outline-variant)">{cert.id} · {cert.issuer} · {cert.level}</div>
+              <div class="text-sm headline-font mb-0.5 tracking-tight" style="color: var(--color-on-surface)">
+                {cert.name}
+              </div>
+              <div class="text-[10px] font-mono" style="color: var(--color-outline-variant)">
+                {cert.id} · {cert.issuer} · {cert.level}
+              </div>
             </div>
-            <div
-              class="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-[9px] font-mono tracking-tight"
-              style="color: var(--color-primary)"
-              data-i18n-base
-              data-i18n-en="Verify ↗"
-              data-i18n-de="Verifizieren ↗"
-            >Verify ↗</div>
+            <div class="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-[9px] font-mono tracking-tight" style="color: var(--color-primary)">
+              Verify ↗
+            </div>
           </div>
         </a>
       ))}

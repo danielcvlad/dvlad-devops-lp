@@ -53,42 +53,17 @@ const resumeUrl = "/dvlad-devops-lp/CV_Daniel_Vlad.pdf";
 
 <script is:inline>
   function toggleMobileMenu() {
-    var menu = document.getElementById('mobile-menu');
-    var drawer = document.getElementById('mobile-menu-drawer');
+    const menu = document.getElementById('mobile-menu');
+    const drawer = document.getElementById('mobile-menu-drawer');
     menu.classList.toggle('hidden');
     drawer.classList.toggle('-translate-x-full');
   }
+  
+  // Close menu when clicking overlay
   document.getElementById('mobile-menu').addEventListener('click', function(e) {
     if (e.target === this) {
       toggleMobileMenu();
     }
-  });
-
-  // Language switcher
-  function switchLang(lang) {
-    localStorage.setItem('lang', lang);
-    document.documentElement.lang = lang;
-    window.__USER_LANG__ = lang;
-    // Update lang button label
-    var btn = document.getElementById('lang-toggle');
-    if (btn) btn.textContent = lang === 'en' ? 'DE' : 'EN';
-    // Apply translations to all translatable elements
-    document.querySelectorAll('[data-i18n-base]').forEach(function(el) {
-      var enText = el.getAttribute('data-i18n-en') || '';
-      var deText = el.getAttribute('data-i18n-de') || enText;
-      var params = el.getAttribute('data-i18n-params') || '';
-      var text = lang === 'de' ? deText : enText;
-      if (params) {
-        try { var p = JSON.parse(params); for (var k in p) { text = text.replace('{' + k + '}', p[k]); } } catch(e) {}
-      }
-      el.textContent = text;
-    });
-  }
-  // Init lang button label
-  document.addEventListener('DOMContentLoaded', function() {
-    var lang = window.__USER_LANG__ || 'en';
-    var btn = document.getElementById('lang-toggle');
-    if (btn) btn.textContent = lang === 'en' ? 'DE' : 'EN';
   });
 </script>
 
@@ -121,19 +96,7 @@ const resumeUrl = "/dvlad-devops-lp/CV_Daniel_Vlad.pdf";
 
       <!-- Buttons -->
       <div class="flex items-center gap-2 md:gap-4">
-        <!-- Language Toggle -->
-        <button
-          id="lang-toggle"
-          onclick="switchLang(window.__USER_LANG__ === 'en' ? 'de' : 'en')"
-          class="flex items-center justify-center w-10 h-10 transition-opacity hover:opacity-70 font-mono text-xs font-bold tracking-widest"
-          style="color: var(--color-on-surface-variant); border: 1px solid var(--color-outline-variant)"
-          title="Switch language"
-          aria-label="Switch language"
-        >
-          DE
-        </button>
-
-        <!-- Theme Toggle — desktop only -->
+        <!-- Theme Toggle — desktop only, hidden on mobile -->
         <button
           id="theme-toggle"
           onclick="toggleTheme()"

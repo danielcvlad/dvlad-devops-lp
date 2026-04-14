@@ -1,7 +1,7 @@
 ---
 import { resumeData } from '../data/resume';
 
-const visibleCount = 2;
+const visibleCount = 2; // Show last 2 by default, earlier jobs collapsed
 const earlierJobs = resumeData.experience.slice(visibleCount);
 const recentJobs = resumeData.experience.slice(0, visibleCount);
 ---
@@ -10,12 +10,7 @@ const recentJobs = resumeData.experience.slice(0, visibleCount);
   <div class="max-w-6xl mx-auto px-6 flex flex-col items-center">
     <div class="flex items-center gap-4 mb-16 w-full">
       <div class="h-[1px] flex-grow" style="background: linear-gradient(to right, transparent, rgba(65, 71, 84, 0.3))"></div>
-      <h2
-        class="text-3xl font-bold headline-font tracking-tighter uppercase whitespace-nowrap"
-        data-i18n-base
-        data-i18n-en="Work Experience"
-        data-i18n-de="Berufserfahrung"
-      >Work Experience</h2>
+      <h2 class="text-3xl font-bold headline-font tracking-tighter uppercase whitespace-nowrap">Work Experience</h2>
       <div class="h-[1px] flex-grow" style="background: linear-gradient(to right, rgba(65, 71, 84, 0.3), transparent)"></div>
     </div>
 
@@ -23,18 +18,30 @@ const recentJobs = resumeData.experience.slice(0, visibleCount);
       <!-- Pipeline Connector Line -->
       <div class="absolute left-[7px] top-0 bottom-0 w-[2px]" style="background-color: rgba(65, 71, 84, 0.2)"></div>
 
-      {recentJobs.map((exp) => (
+      {recentJobs.map((exp, index) => (
         <div class="relative pl-12 pb-16 last:pb-0">
-          <div class={`pipeline-node ${exp.color === 'primary' ? 'bg-primary' : exp.color === 'secondary' ? 'bg-secondary' : 'bg-outline-variant'}`}></div>
+          <div
+            class={`pipeline-node ${
+              exp.color === 'primary' ? 'bg-primary' :
+              exp.color === 'secondary' ? 'bg-secondary' :
+              'bg-outline-variant'
+            }`}
+          ></div>
 
           <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
             <div>
-              <h3 class="text-xl font-bold headline-font" style="color: var(--color-secondary)">{exp.title}</h3>
-              <span class="text-sm font-mono" style="color: var(--color-on-surface-variant)">{exp.company}</span>
+              <h3 class="text-xl font-bold headline-font" style="color: var(--color-secondary)">
+                {exp.title}
+              </h3>
+              <span class="text-sm font-mono" style="color: var(--color-on-surface-variant)">
+                {exp.company}
+              </span>
             </div>
-            <span class="text-xs font-mono px-3 py-1" style="background-color: rgba(68, 143, 255, 0.1); color: var(--color-secondary)">{exp.periodShort}</span>
+            <span class="text-xs font-mono px-3 py-1" style="background-color: rgba(68, 143, 255, 0.1); color: var(--color-secondary)">
+              {exp.periodShort}
+            </span>
           </div>
-
+          
           <ul class="mb-4 space-y-2 leading-relaxed" style="color: var(--color-on-surface-variant)">
             {exp.bullets.map(bullet => (
               <li class="flex items-start gap-2">
@@ -54,23 +61,43 @@ const recentJobs = resumeData.experience.slice(0, visibleCount);
 
       {/* Collapsible earlier experience */}
       <div id="earlier-experience" class="hidden">
-        {earlierJobs.map((exp) => (
+        {earlierJobs.map((exp, index) => (
           <div class="relative pl-12 pb-16 last:pb-0">
-            <div class={`pipeline-node ${exp.color === 'primary' ? 'bg-primary' : exp.color === 'secondary' ? 'bg-secondary' : 'bg-outline-variant'}`}></div>
+            <div
+              class={`pipeline-node ${
+                exp.color === 'primary' ? 'bg-primary' :
+                exp.color === 'secondary' ? 'bg-secondary' :
+                'bg-outline-variant'
+              }`}
+            ></div>
+
             <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
               <div>
-                <h3 class="text-xl font-bold headline-font" style="color: var(--color-secondary)">{exp.title}</h3>
-                <span class="text-sm font-mono" style="color: var(--color-on-surface-variant)">{exp.company}</span>
+                <h3 class="text-xl font-bold headline-font" style="color: var(--color-secondary)">
+                  {exp.title}
+                </h3>
+                <span class="text-sm font-mono" style="color: var(--color-on-surface-variant)">
+                  {exp.company}
+                </span>
               </div>
-              <span class="text-xs font-mono px-3 py-1" style="background-color: rgba(68, 143, 255, 0.1); color: var(--color-secondary)">{exp.periodShort}</span>
+              <span class="text-xs font-mono px-3 py-1" style="background-color: rgba(68, 143, 255, 0.1); color: var(--color-secondary)">
+                {exp.periodShort}
+              </span>
             </div>
+            
             <ul class="mb-4 space-y-2 leading-relaxed" style="color: var(--color-on-surface-variant)">
               {exp.bullets.map(bullet => (
-                <li class="flex items-start gap-2"><span style="color: var(--color-secondary)">▸</span><span>{bullet}</span></li>
+                <li class="flex items-start gap-2">
+                  <span style="color: var(--color-secondary)">▸</span>
+                  <span>{bullet}</span>
+                </li>
               ))}
             </ul>
+
             <div class="flex gap-2 flex-wrap">
-              {exp.tags.map(tag => <span class="skill-tag">{tag}</span>)}
+              {exp.tags.map(tag => (
+                <span class="skill-tag">{tag}</span>
+              ))}
             </div>
           </div>
         ))}
@@ -84,23 +111,18 @@ const recentJobs = resumeData.experience.slice(0, visibleCount);
             class="btn-secondary text-xs"
             style="padding: 8px 20px;"
             onclick="
-              var el = document.getElementById('earlier-experience');
-              var btn = document.getElementById('toggle-earlier');
-              var lang = window.__USER_LANG__ || 'en';
-              var labels = lang === 'de'
-                ? { less: 'WENIGER ANZEIGEN', more: 'FRÜHERE ERFAHRUNG ANZEIGEN' }
-                : { less: 'SHOW LESS', more: 'SHOW EARLIER EXPERIENCE' };
+              const el = document.getElementById('earlier-experience');
+              const btn = document.getElementById('toggle-earlier');
               if (el.classList.contains('hidden')) {
                 el.classList.remove('hidden');
-                btn.innerHTML = '<span class=&quot;material-symbols-outlined text-sm&quot; style=&quot;vertical-align:middle&quot;>remove</span> ' + labels.less;
+                btn.innerHTML = '<span class=&quot;material-symbols-outlined text-sm&quot; style=&quot;vertical-align:middle&quot;>remove</span> SHOW LESS';
               } else {
                 el.classList.add('hidden');
-                btn.innerHTML = '<span class=&quot;material-symbols-outlined text-sm&quot; style=&quot;vertical-align:middle&quot;>add</span> ' + labels.more;
+                btn.innerHTML = '<span class=&quot;material-symbols-outlined text-sm&quot; style=&quot;vertical-align:middle&quot;>add</span> SHOW EARLIER EXPERIENCE';
               }
             "
           >
-            <span class="material-symbols-outlined text-sm" style="vertical-align: middle">add</span>
-            <span data-i18n-base data-i18n-en="SHOW EARLIER EXPERIENCE" data-i18n-de="FRÜHERE ERFAHRUNG ANZEIGEN">SHOW EARLIER EXPERIENCE</span>
+            <span class="material-symbols-outlined text-sm" style="vertical-align: middle">add</span> SHOW EARLIER EXPERIENCE
           </button>
         </div>
       )}
