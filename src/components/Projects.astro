@@ -5,20 +5,13 @@ import { resumeData } from '../data/resume';
 <section class="py-24" style="background-color: var(--color-surface-container-low)" id="projects">
   <div class="max-w-6xl mx-auto px-6 text-center">
     <div class="flex flex-col items-center mb-16 gap-6">
-      <h2
-        class="text-3xl font-bold headline-font tracking-tighter uppercase"
-        data-i18n-base
-        data-i18n-en="Project Repository"
-        data-i18n-de="Projekt-Archiv"
-      >Project Repository</h2>
+      <h2 class="text-3xl font-bold headline-font tracking-tighter uppercase">Project Repository</h2>
       <div class="flex gap-4">
         <span class="text-xs font-mono flex items-center gap-2" style="color: var(--color-primary)">
-          <span class="w-2 h-2" style="background-color: var(--color-primary)"></span>
-          <span data-i18n-base data-i18n-en="12 DEPLOYED" data-i18n-de="12 BEREITGESTELLT">12 DEPLOYED</span>
+          <span class="w-2 h-2" style="background-color: var(--color-primary)"></span> 12 DEPLOYED
         </span>
         <span class="text-xs font-mono flex items-center gap-2" style="color: var(--color-secondary)">
-          <span class="w-2 h-2" style="background-color: var(--color-secondary)"></span>
-          <span data-i18n-base data-i18n-en="MORE IN_PROGRESS" data-i18n-de="MEHR IN BEARBEITUNG">MORE IN_PROGRESS</span>
+          <span class="w-2 h-2" style="background-color: var(--color-secondary)"></span> MORE IN_PROGRESS
         </span>
       </div>
     </div>
@@ -30,9 +23,7 @@ import { resumeData } from '../data/resume';
             <span class={`material-symbols-outlined text-3xl ${project.iconColor === 'primary' ? 'text-primary' : 'text-secondary'}`}>
               {project.icon}
             </span>
-            <span class="text-[10px] font-mono uppercase tracking-tighter" style="color: var(--color-outline-variant)">
-              <span data-i18n-base data-i18n-en="Repo:" data-i18n-de="Repo:">Repo:</span> {project.repo}
-            </span>
+            <span class="text-[10px] font-mono uppercase tracking-tighter" style="color: var(--color-outline-variant)">Repo: {project.repo}</span>
           </div>
 
           <h3 class="text-lg font-bold headline-font mb-4" style={project.iconColor === 'primary' ? 'color: var(--color-primary)' : 'color: var(--color-secondary)'}>
@@ -52,11 +43,8 @@ import { resumeData } from '../data/resume';
       ))}
     </div>
 
-    <button
-      class="btn-secondary"
-      data-i18n-base
-      data-i18n-en="LOAD_MORE_PROJECTS [FETCH_REPOS]"
-      data-i18n-de="MEHR PROJEKTE LADEN [FETCH_REPOS]"
-    >LOAD_MORE_PROJECTS [FETCH_REPOS]</button>
+    <button class="btn-secondary">
+      LOAD_MORE_PROJECTS [FETCH_REPOS]
+    </button>
   </div>
 </section>
